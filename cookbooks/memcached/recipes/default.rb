@@ -35,8 +35,18 @@ end
 #    source "memcached.erb"
 #end
 
-# chkconfigの設定
+# chkconfigの設定(つなげて書いていいのかわからんからひとまず..)
+service "memcached" do
+  action   [ :enable ]
+end
 
+service "haldaemon" do
+  action   [ :disable ]
+end
+
+service "sendmail" do
+  action   [ :disable ]
+end
 
 # snmpd.confの設定
 #template "/etc/snmp/snmpd.conf" do
