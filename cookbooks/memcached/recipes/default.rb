@@ -14,7 +14,7 @@ end
 
 # ソースからコンパイルしてインストール
 # ただし/usr/local/srcにファイルをダウンロードしておく
-# もしそれが面倒なときはEOH以降のlinuxコマンドのとこにwget http://nginx.org/download/nginx-1.3.11.tar.gzと追記でok
+# もしそれが面倒なときはEOH以降のlinuxコマンドのとこにwget http://memcached.googlecode.com/files/memcached-1.4.15.tar.gz と追記でok
 script “install_memcached” do
     interpreter “bash”
     user “root”
