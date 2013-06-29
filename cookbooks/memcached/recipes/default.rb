@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-# yumでssl関連インストール
+# yumでもろもろインストール
 package "libevent libevent-devel" do
     action :install
 end
