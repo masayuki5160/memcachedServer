@@ -4,5 +4,5 @@
 
 実行方法
 ========
-solo.rb、chefsolo.jsonだけパスを通せば下記でchef-solo実行
+solo.rb、chefsolo.jsonだけパスを通せば下記でchef-solo実行<br />
 sudo chef-solo -c solo.rb -j ./chefsolo.json
