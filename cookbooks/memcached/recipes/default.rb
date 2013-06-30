@@ -8,9 +8,13 @@
 #
 
 # yumでもろもろインストール
-#package "libevent libevent-devel" do
-#    action :install
-#end
+package "libevent" do
+    action :install
+end
+
+package "libevent-devel" do
+    action :install
+end
 
 # ソースからmemcachedをコンパイルしてインストール
 script "install_memcached" do
