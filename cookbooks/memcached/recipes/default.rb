@@ -12,33 +12,20 @@
 #    action :install
 #end
 
-package "libevent" do
-    action :install
-end
-
-# ソースからコンパイルしてインストール
-# ただし/usr/local/srcにファイルをダウンロードしておく
-# もしそれが面倒なときはEOH以降のlinuxコマンドのとこにwget http://memcached.googlecode.com/files/memcached-1.4.15.tar.gz と追記でok
-#bash “install memcached” do
-#    user “vagrant”
-#    cwd “/usr/local/src/”
-#    code <<-EOH
-#        wget http://memcached.googlecode.com/files/memcached-1.4.15.tar.gz
-#        tar xzvf memcached-1.4.15.tar.gz
-#        cd memcached-1.4.15
-#        ./configure
-#        make
-#        make install
-#    EOH
-#end
-
-script "test" do
+# ソースからmemcachedをコンパイルしてインストール
+script "install_memcached" do
     interpreter "bash"
     user "root"
     cwd "/tmp"
     code <<-EOH
-        mkdir tanaka
+        wget http://memcached.googlecode.com/files/memcached-1.4.15.tar.gz
+        tar xzvf memcached-1.4.15.tar.gz
+        cd memcached-1.4.15
+        ./configure
+        make
+        make install
     EOH
+    # ここに同じスクリプトを実行しないような設定を追加(chef-solo入門を参照)
 end
 
 # memcachedの起動スクリプトを設定
